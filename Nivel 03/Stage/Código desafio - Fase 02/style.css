@@ -6,11 +6,17 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+input,
+textarea,
+select,
+button  {
   top: 0;
   left: 0;
   background: #BFD7E4;
+
   font-family: 'Poppins', sans-serif;
+  color: #4E4958;
 }
 
 body::before{
@@ -89,12 +95,21 @@ form {
   height: 100%;
   background: #FFFFFF;
   border-radius: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-form fieldset {
+fieldset {
   border: none;
-  height: 100vh;
   padding: 32px 64px;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 form .title-form {
@@ -118,33 +133,96 @@ form .title-form h1 {
 
   color: #FFFFFF;
 }
+fieldset legend {
+  width: 100%;
 
-form .input-group {
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #253B51;
+
+  border-bottom: 1px solid #E6E6F0;
+  padding-bottom: 8px;
+
+  text-align: center;
+}
+
+.input-group  {
   display: flex;
   gap: 22px;
 }
 
-form  .input-wrapper {
+.input-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-} 
+}
 
-form .input-wrapper label {
+.input-wrapper label {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  /* identical to box height, or 171% */
-
 
   color: #4E4958;
 }
-form  input {
-  height: 55px;
+
+input, textarea{
+  
   background: #FAFAFC;
 
   border: 1px solid #E6E6F0;
   border-radius: 8px;
+  padding: 0 24px;
+}
+
+input{
+  height: 55px;
+}
+
+textarea {
+  padding: 5px 8px;
+}
+
+.wrapper-date {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wrapper-date .col-3 {
+  display: flex;
+  gap: 10px;
+}
+
+.wrapper-date .col-3 > :nth-child(1) {
+  width: 100%;
+  margin-right: 32px;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 63px;
+  padding: 15px 40px;
+  width: 100%;
+  
+  background: #F67669;
+  border-radius: 8px;
+  border: none;
+
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+
+  color: #FFFFFF;
 }
