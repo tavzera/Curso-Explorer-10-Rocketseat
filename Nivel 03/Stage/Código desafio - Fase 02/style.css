@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Staatliches&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  top: 0;
+  left: 0;
+  background: #BFD7E4;
+  font-family: 'Poppins', sans-serif;
+}
+
+body::before{
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background: #293241;
+
+  width: 100%;
+  height: 465px;
+}
+
+.page {
+  top: 0;
+  left: 0;
+  width: 750px;
+  height: 100vh;
+
+  margin: auto;
+  padding: auto;
+}
+
+.page header {
+  margin-top: 107px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #FFFFFF;
+}
+
+.page header h1 {
+  font-family: 'Staatliches', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+}
+
+.page header p {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.page header .mentory-ration {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+
+  margin-top: 24px;
+  
+}
+
+.page header .mentory-ration .ballon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page header .mentory-ration .star-mentory {
+  position: absolute;
+  margin-top: 31px;
+}
+
+form {
+  margin-top: 32px;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+form fieldset {
+  border: none;
+  height: 100vh;
+  padding: 32px 64px;
+}
+
+form .title-form {
+  height: 133px;
+  width: 100%;
+  background: #F67669;
+  border-radius: 20px 20px 0px 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+form .title-form h1 {
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #FFFFFF;
+}
+
+form .input-group {
+  display: flex;
+  gap: 22px;
+}
+
+form  .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} 
+
+form .input-wrapper label {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+
+  color: #4E4958;
+}
+form  input {
+  height: 55px;
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
