@@ -17,7 +17,7 @@
       <h1>Mentoria</h1>
       <p>Preencha o formulário abaixo para agendar a sua mentoria</p>
     </header>
-    <form>
+    <form id="my_form">
       <fieldset>
         <div class="fieldset-wrapper">
           <legend>INFORMAÇÕES PESSOAIS</legend>
@@ -35,7 +35,7 @@
           </div>
           <div class="input-wrapper">
             <label for="user-password">Senha<span>(mínimo de 6 caracteres)</span></label>
-            <input type="password" id="user-password">
+            <input type="password" id="user-password" minlength="6" required>
           </div>
         </div>
       </fieldset>
@@ -71,7 +71,7 @@
                 <input type="time" id="mentory-mentor">
               </div>
             </div>
-            
+
             <div class="wrapper-date">
               <h2>SEGUNDA MENTORIA</h2>
               <div class="col-3">
@@ -92,7 +92,9 @@
         </div>
       </fieldset>
     </form>
+    <footer>
+      <input class="button" form="my_form" type="submit" value="Salvar">
+    </footer>
   </div>
 </body>
-
 </html>
