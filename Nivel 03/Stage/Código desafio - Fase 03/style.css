@@ -1,164 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@400;500;600;700&family=Staatliches&display=swap');
-
-:root {
-  --ff-heading: 'Palanquin', sans-serif;
-  --ff-texting: 'Staatliches', cursive;
-
-  --fc-white: #fff;
-  --fc-black: #23053A;
-  --fc-dark: #4A4E69;
-
-  --bg-color-primary: #EFF1FF;
-  --bg-color-secundary: #8E9AAF;
-  --bg-color-alternative: #CBC0D3;
-  --bg-color-white: #FFFFFF;
-
-  font-size: 62.5%;
-  --fs-body: 1.6rem;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: var(--bg-color-primary);
-  font-family: var(--ff-heading);
+:root {
+
+  --font-family-header-h: 'Staatliches', cursive;
+  --font-family-text-body: 'Palanquin', sans-serif;
+
+  --font-color-header-h1: hsla(0, 0%, 100%, 1);
+  --font-color-body-text: hsla(274, 84%, 12%, 1);
+  --font-color-card-h2: hsla(232, 17%, 35%, 1);
+
+  --background-color: hsla(233, 100%, 97%, 1);
+  --background-color-header: hsla(218, 17%, 62%, 1);
+  --background-color-h1-header: hsla(275, 18%, 79%, 1);
+  --background-color-h2-card: hsla(312, 91%, 96%, 1);
+
+  font-size: 62.5%;
 }
 
-body::before{
-  content: '';
+body {
+  background-color: var(--background-color);
+}
+
+body::before {
   position: absolute;
-  left: 0;
+
+  content: '';
   top: 0;
+  left: 0;
   z-index: -1;
 
-  height: 28rem;
-  width: 100vw;
-  background: var(--bg-color-secundary);
+  background-color: var(--background-color-header);
+  width: 100%;
+  height: 28.3rem;
 }
 
 header {
-  font-family: var(--ff-texting);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-}
-
-header a {
   margin-top: 3.2rem;
-}
-
-header h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 1.6rem;
-
-  height: 5rem;
-  width: 100%;
-  background-color: var(--bg-color-alternative);
-
-  font-family: var(--ff-texting);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 4rem;
-  line-height: 3.5rem;
-
-  /* identical to box height, or 85% */
-  letter-spacing: 0.05em;
-
-  color: var(--fc-white);
-
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 header img {
-  height: 137px;
+  margin-bottom: 3.2rem;
+  height: 13.7rem;
+}
+
+header h1 {
+  color: var(--font-color-header-h1);
+  font-family: var(--font-family-header-h);
+  font-style: normal;
+
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.08em;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+  background-color: var(--background-color-h1-header);
+
+  padding: 0.8rem;
+  margin-bottom: 2.9rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .page {
-  width: 32rem;
+  max-width: 32rem;
   margin: 0 auto;
-  margin-top: 5rem;
+}
+
+.page p {
+
+  font-family: var(--font-family-text-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.08rem;
+
+  text-align: center;
+  margin-bottom: 6.3rem;
 }
 
 main {
   display: grid;
-  gap: 36px;
-  width: 32rem;
+  gap: 3.2rem;
 }
 
-main p {
-  margin-top: 50px;
-  margin-bottom: 63px;
-  font-family: var(--ff-heading);
-  font-style: normal;
-  font-weight: 400;
-  font-size: var(--fs-body);
-  line-height: 2.5rem;
-
-  /* or 75% */
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  color: var(--fc-black);
-
-  width: 100%;
-  height: 75px;
-}
-
-main .card{ 
-  display: grid;
+.card {
   position: relative;
 }
 
-main .card img {
-  width: 100%;
-  border-radius: 20px;
+.card img {
+  /* width: 32rem; */
   object-fit: cover;
-  animation: toTopUp 1s reverse;
-}
-
-.card h2{
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  width: 11rem;
-  height: 3.5rem;
-
-  margin-top: 1.6rem;
-  margin-right: 2.3rem;
-
-  background: #FEEAFA;
   border-radius: 2rem;
 
-  display: inline-flex;
-  justify-content: center;
-  font-family: var(--ff-texting);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.0rem;
-  line-height: 3.5rem;
-
-  /* identical to box height, or 170% */
-  letter-spacing: 0.05em;
-
-  color: var(--fc-dark);
-
-  animation: toTopDown 1s 500ms backwards;
+  animation: downTop 1s reverse backwards;
 }
 
-@keyframes toTopDown {
-  0%{
+.card h2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1.6rem;
+  margin-right: 1.6rem;
+
+  border-radius: 2rem;
+  background-color: var(--background-color-h2-card);
+
+  font-family: var(--font-family-header-h);
+  font-weight: 400;
+  color: var(--font-color-card-h2);
+  line-height: 3.4rem;
+  letter-spacing: 0.08em;
+
+  padding: 0 1.6rem;
+  height: 3.5rem;
+
+  display: inline-flex;
+  align-items: center;
+
+  animation: topDown 1s 500ms backwards;
+}
+
+@keyframes topDown {
+  0% {
     opacity: 0;
-    transform: translateY(-1.5rem);
+    transform: translateY(-15px);
   }
 
   100%{
@@ -167,14 +143,16 @@ main .card img {
   }
 }
 
-@keyframes toTopUp {
-  0%{
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-
-  100%{
+@keyframes downTop {
+  100% {
     opacity: 0;
-    transform: translateY(1.5rem);
+    transform: translateY(15px);
+  }
+}
+
+@media (min-width: 700px){
+  .page {
+    max-width: 117rem;
+    padding: 0 5rem;
   }
 }
