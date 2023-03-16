@@ -5,138 +5,141 @@
 }
 
 :root {
+  --ff-text-footer: 'Open Sans', sans-serif;
+  --ff-text-mobile: 'Palanquin', sans-serif;
+  --ff-text-desktop: 'Roboto', sans-serif;
+  --ff-text-heading: 'Staatliches', cursive;
 
-  --font-family-header-h: 'Staatliches', cursive;
-  --font-family-text-body: 'Palanquin', sans-serif;
-
-  --font-color-header-h1: hsla(0, 0%, 100%, 1);
-  --font-color-body-text: hsla(274, 84%, 12%, 1);
-  --font-color-card-h2: hsla(232, 17%, 35%, 1);
-
-  --background-color: hsla(233, 100%, 97%, 1);
-  --background-color-header: hsla(218, 17%, 62%, 1);
-  --background-color-h1-header: hsla(275, 18%, 79%, 1);
-  --background-color-h2-card: hsla(312, 91%, 96%, 1);
+  --bg-color-header: hsla(218, 17%, 62%, 1);
+  --bg-color-content: hsla(233, 100%, 97%, 1);
+  --bg-color-title: hsla(275, 18%, 79%, 1);
+  --bg-color-h1: hsla(312, 91%, 96%, 1);
 
   font-size: 62.5%;
 }
 
 body {
-  background-color: var(--background-color);
-}
-
-body::before {
-  position: absolute;
-
-  content: '';
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  background-color: var(--background-color-header);
-  width: 100%;
-  height: 28.3rem;
+  font-family: var(--ff-text-mobile);
+  font-size: 1.6rem;
 }
 
 header {
-  margin-top: 3.2rem;
-  text-align: center;
-  margin-bottom: 3.2rem;
+  background-color: var(--bg-color-header);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header img {
-  margin-bottom: 3.2rem;
+  margin-top: 3.2rem;
+  margin-bottom: 4rem;
   height: 13.7rem;
 }
 
-header h1 {
-  color: var(--font-color-header-h1);
-  font-family: var(--font-family-header-h);
-  font-style: normal;
+header #title {
+  background-color: var(--bg-color-title);
+  width: 100%;
+  padding: 0.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
+header #title h1 {
+  font-family: var(--ff-text-heading);
+  font-style: normal;
   font-weight: 400;
   font-size: 4rem;
   line-height: 3.4rem;
 
   letter-spacing: 0.08em;
+
+  color: #FFFFFF;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
 
-  background-color: var(--background-color-h1-header);
+#page {
+  padding: 2rem 3.2rem;
 
-  padding: 0.8rem;
-  margin-bottom: 2.9rem;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-color-content);
+}
+
+#page p {
+  font-family: 'Palanquin';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.41rem;
+  line-height: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #23053A;
 }
 
 img {
   width: 100%;
-  height: auto;
 }
 
-.page {
-  max-width: 32rem;
-  margin: 0 auto;
-
-  padding-top: 1.4rem;
-  padding-bottom: 1.4rem;
-}
-
-.page p {
-
-  font-family: var(--font-family-text-body);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  letter-spacing: 0.08rem;
-
-  text-align: center;
-  margin-bottom: 6.3rem;
-}
-
-main {
+main #wrapper-cards {
   display: grid;
   gap: 3.2rem;
+
+  margin-top: 6rem;
 }
 
-.card {
+main #wrapper-cards .cards {
   position: relative;
 }
 
-.card img {
-  /* width: 32rem; */
-  object-fit: cover;
-  border-radius: 2rem;
+main #wrapper-cards .cards img{
+ border-radius: 2rem ;
 
-  animation: downTop 1s reverse backwards;
+ width: 100%;
+ object-fit: cover;
+
+ animation: downTop 700ms reverse backwards;
 }
 
-.card h2 {
+main #wrapper-cards .cards .subtitle {
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
+
   margin-top: 1.6rem;
   margin-right: 1.6rem;
 
-  border-radius: 2rem;
-  background-color: var(--background-color-h2-card);
-
-  font-family: var(--font-family-header-h);
-  font-weight: 400;
-  color: var(--font-color-card-h2);
-  line-height: 3.4rem;
-  letter-spacing: 0.08em;
-
-  padding: 0 1.6rem;
-  height: 3.5rem;
-
-  display: inline-flex;
+  background-color: var(--bg-color-title);
+  display: flex;
   align-items: center;
+  justify-content: center;
 
-  animation: topDown 1s 500ms backwards;
+  border-radius: 2rem;
+
+  animation: topDown 700ms 350ms backwards;
+}
+
+main #wrapper-cards .cards .subtitle p {
+  padding: 0 2.4rem;
+  text-transform: uppercase;
+
+  font-family: var(--ff-text-heading);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  /* identical to box height, or 170% */
+  letter-spacing: 0.05em;
+
+  color: #4A4E69;
 }
 
 @keyframes topDown {
-  0% {
+  0%{
     opacity: 0;
     transform: translateY(-15px);
   }
@@ -148,15 +151,8 @@ main {
 }
 
 @keyframes downTop {
-  100% {
+  100%{
     opacity: 0;
     transform: translateY(15px);
-  }
-}
-
-@media (min-width: 700px){
-  .page {
-    max-width: 117rem;
-    padding: 0 5rem;
   }
 }
